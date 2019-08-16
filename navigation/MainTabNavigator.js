@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import MapScreen from '../screens/MapScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -51,6 +52,22 @@ LinksStack.navigationOptions = {
 
 LinksStack.path = '';
 
+const MapStack = createStackNavigator(
+  {
+    Map: MapScreen,
+  },
+  config
+);
+
+MapStack.navigationOptions = {
+  tabBarLabel: 'Map',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-map'} />
+  ),
+};
+
+MapStack.path = '';
+
 const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
@@ -70,6 +87,7 @@ SettingsStack.path = '';
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
+  MapStack,
   SettingsStack,
 });
 
