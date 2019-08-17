@@ -1,5 +1,6 @@
 export const clubs = [
     {
+        description: "It's pretty cool, dude",
         index: 0,
         title: "Club Cairo",
         latlng: {
@@ -8,6 +9,7 @@ export const clubs = [
         }
     },
     {
+        description: "It's pretty cool, dude",
         index: 1,
         title: "Aura",
         latlng: {
@@ -16,6 +18,7 @@ export const clubs = [
         }
     },
     {
+        description: "It's pretty cool, dude",
         index: 2,
         title: "Etro",
         latlng: {
@@ -24,6 +27,7 @@ export const clubs = [
         }
     },
     {
+        description: "It's pretty cool, dude",
         index: 3,
         title: "Cle",
         latlng: {
@@ -32,6 +36,7 @@ export const clubs = [
         }
     },
     {
+        description: "It's pretty cool, dude",
         index: 4,
         title: "Numbers",
         latlng: {
@@ -40,6 +45,7 @@ export const clubs = [
         }
     },
     {
+        description: "It's pretty cool, dude",
         index: 5,
         title: "Wild West",
         latlng: {
@@ -48,6 +54,7 @@ export const clubs = [
         }
     },
     {
+        description: "It's pretty cool, dude",
         index: 6,
         title: "Stereo Live",
         latlng: {
@@ -56,6 +63,7 @@ export const clubs = [
         }
     },
     {
+        description: "It's pretty cool, dude",
         index: 7,
         title: "Belvedere",
         latlng: {

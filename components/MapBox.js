@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import * as Permissions from 'expo-permissions';
+import {Alert} from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from "react-native-maps";
 import {latDelta, longDelta} from '../constants/Coordinates';
 import {clubs as myClubs} from '../constants/Clubs'
@@ -22,6 +23,17 @@ export default function MapBox() {
         }
     }
 
+    const _iconPress = (props) => {
+        return Alert.alert(
+            props.title,
+            props.description,
+            [
+                {text: 'Cancel', style: 'cancel'},
+                {text: 'OK'}
+            ]
+        )
+    }
+
     useEffect(() => {
         requestGeolocationPermission();
         console.log(clubs)
@@ -41,7 +53,10 @@ export default function MapBox() {
         >
             {
                 clubs.map((club) => {
-                    return <Marker image={require('../assets/images/owl.png')} key={club.index} coordinate={club.latlng} description="cool"/>
+                    return <Marker image={require('../assets/images/owl.png')} key={club.index} 
+                    coordinate={club.latlng} 
+                    onPress={ () =>_iconPress(club)}
+                    />
                 })
             }
         </MapView>
