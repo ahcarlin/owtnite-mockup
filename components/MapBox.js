@@ -53,7 +53,7 @@ export default function MapBox() {
         >
             {
                 clubs.map((club) => {
-                    return <Marker image={require('../assets/images/owl.png')} key={club.index} 
+                    return <Marker image={require('../assets/images/owl-large.png')} key={club.index}
                     coordinate={club.latlng} 
                     onPress={ () =>_iconPress(club)}
                     />

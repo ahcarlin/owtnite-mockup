@@ -8,10 +8,10 @@ export default function ClubList() {
         return <View style={styles.separator}/>
     }
 
-    const _handlePress = () => {
+    const _handlePress = (club) => {
         return Alert.alert(
-            'Indaclub',
-            'Get a load of this dang \'ol deal, mang!',
+            club.key,
+            'Come check out our specials today!',
             [
                 {text: 'Cancel', style: 'cancel'},
                 {text: 'OK'}
@@ -27,7 +27,7 @@ export default function ClubList() {
             ]}
             renderItem={({item}) => {
                 return (
-                <Text style={styles.item} onPress={_handlePress}>
+                <Text style={styles.item} onPress={() =>_handlePress(item)}>
                     {item.key}
                 </Text>
                 )

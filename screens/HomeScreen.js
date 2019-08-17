@@ -22,7 +22,7 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/robot-dev.png')
+                ? require('../assets/images/owtnite-logo.png')
                 : require('../assets/images/robot-prod.png')
             }
             style={styles.welcomeImage}
@@ -30,41 +30,19 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
+          <Text style={styles.getStartedText}>Welcome to Owtnite!</Text>
 
           <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
+            This is just a quick proof of concept with a map screen.
+            
+            The app can presently use geolocation to get the user's location. 
+            All club data has been dummied in.
           </Text>
         </View>
 
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
-            </Text>
-          </TouchableOpacity>
-        </View>
       </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
-        </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
-          </MonoText>
-        </View>
-      </View>
     </View>
   );
 }
@@ -129,8 +107,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 200,
+    height: 160,
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
