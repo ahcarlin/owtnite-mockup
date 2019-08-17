@@ -1,11 +1,22 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Alert, FlatList, StyleSheet, Text, View } from "react-native";
 
 
 export default function ClubList() {
 
     const separator = () => {
         return <View style={styles.separator}/>
+    }
+
+    const _handlePress = () => {
+        return Alert.alert(
+            'Indaclub',
+            'Get a load of this dang \'ol deal, mang!',
+            [
+                {text: 'Cancel', style: 'cancel'},
+                {text: 'OK'}
+            ]
+        )
     }
 
     return (
@@ -15,7 +26,11 @@ export default function ClubList() {
                 {key: 'Pure'}, {key: 'Aura'}, {key: 'Etro'}, {key: 'Cle'}, {key: 'Numbers'}, {key: 'Wild West'}, {key: 'Stereo Live'}, {key: 'Belvedere'}
             ]}
             renderItem={({item}) => {
-                return <Text style={styles.item}>{item.key}</Text>
+                return (
+                <Text style={styles.item} onPress={_handlePress}>
+                    {item.key}
+                </Text>
+                )
             }}
             ItemSeparatorComponent={separator}
         />
