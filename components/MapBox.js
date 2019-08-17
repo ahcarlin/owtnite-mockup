@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import * as Permissions from 'expo-permissions';
-import { StyleSheet } from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
+import MapView, {Marker, PROVIDER_GOOGLE} from "react-native-maps";
 import {latDelta, longDelta} from '../constants/Coordinates';
+import {clubs as myClubs} from '../constants/Clubs'
 
 
 
 export default function MapBox() {
 
     const [position, setPosition] = useState({coords:{latitude:0, longitude:0}});
+    const [clubs, setClub] = useState([...myClubs]);
 
     async function requestGeolocationPermission() {
         const {status, permissions} = await Permissions.askAsync(Permissions.LOCATION);
@@ -23,6 +24,7 @@ export default function MapBox() {
 
     useEffect(() => {
         requestGeolocationPermission();
+        console.log(clubs)
     }, [])
     
     return (
@@ -36,6 +38,12 @@ export default function MapBox() {
                 latitudeDelta: latDelta,
                 longitudeDelta: longDelta
             }}
-        />
+        >
+            {
+                clubs.map((club) => {
+                    return <Marker image={require('../assets/images/owl.png')} key={club.index} coordinate={club.latlng} description="cool"/>
+                })
+            }
+        </MapView>
     )
 }
