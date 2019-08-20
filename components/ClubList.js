@@ -23,7 +23,7 @@ export default function ClubList() {
         <FlatList
             style={{maxHeight: "54%", flex: 1}}
             data={[
-                {key: 'Pure'}, {key: 'Aura'}, {key: 'Etro'}, {key: 'Cle'}, {key: 'Numbers'}, {key: 'Wild West'}, {key: 'Stereo Live'}, {key: 'Belvedere'}
+                {key: 'Club Cairo'}, {key: 'Aura'}, {key: 'Etro'}, {key: 'Cle'}, {key: 'Numbers'}, {key: 'Wild West'}, {key: 'Stereo Live'}, {key: 'Belvedere'}
             ]}
             renderItem={({item}) => {
                 return (
